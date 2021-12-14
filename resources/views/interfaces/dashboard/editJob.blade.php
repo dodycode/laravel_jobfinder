@@ -88,7 +88,7 @@
           <div class="form-group">
             <button class="btn btn-icon btn-primary" type="submit">
               <span class="btn-inner--icon"><i class="ni ni-cloud-upload-96"></i></span>
-              <span class="btn-inner--text">Update</span>
+              <span class="btn-inner--text">Submit</span>
             </button>
           </div>
 

@@ -34,15 +34,7 @@ class DashboardController extends Controller
 
     public function storeJob(Request $request)
     {
-        $fields = [
-            'company_name' => $request->company_name,
-            'job_name'     => $request->job_name,
-            'category'     => $request->category,
-            'address'      => $request->address,
-            'description'  => $request->description
-        ];
-
-        Joblist::create($fields);
+        Joblist::store($request);
 
         return redirect()->route('list.job')->with('success', 'Job is successfully created');
     }
@@ -56,17 +48,8 @@ class DashboardController extends Controller
 
     public function updateJob(Request $request, $id)
     {
-        $jobs = Joblist::find($id);
+        Joblist::storeUpdate($request, $id);
 
-        $fields = [
-            'company_name' => $request->company_name,
-            'job_name'     => $request->job_name,
-            'category'     => $request->category,
-            'address'      => $request->address,
-            'description'  => $request->description
-        ];
-
-        $jobs->update($fields);
         return redirect()->route('list.job')->with('success', 'Job is successfully updated');
     }
 
